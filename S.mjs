@@ -13,7 +13,7 @@ S.IF = a => a[0] ? S.eval(a[1]) : S.eval(a[2])
 
 export default S
 
-if (import.meta.main) {
+if (import.meta.main || (globalThis.process && globalThis.process.argv[1].endsWith('/S.mjs'))) {
   console.log('minimum lisp like S in JavaScript')
   console.log('S.eval([S.PLUS, 3, 3])')
 }
